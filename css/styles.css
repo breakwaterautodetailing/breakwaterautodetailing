@@ -980,6 +980,11 @@ p {
   margin-bottom: 1.5rem;
 }
 
+.contact-detail > div:not(.contact-detail-icon) {
+  min-width: 0;
+  flex: 1;
+}
+
 .contact-detail-icon {
   font-size: 1.5rem;
   flex-shrink: 0;
@@ -1005,6 +1010,8 @@ p {
   color: var(--color-gray-300);
   font-size: 1.125rem;
   margin-bottom: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .contact-detail a:hover {
