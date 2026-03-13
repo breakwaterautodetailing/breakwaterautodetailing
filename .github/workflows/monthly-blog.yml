@@ -1,0 +1,51 @@
+name: Monthly Blog Post Generator
+
+on:
+  schedule:
+    # Runs at 9:00 AM ET on the 1st of every month
+    # (UTC 14:00 = 9 AM EST / 10 AM EDT — close enough year-round)
+    - cron: '0 14 1 * *'
+  workflow_dispatch:
+    # Allows manual trigger from GitHub Actions UI
+    inputs:
+      dry_run:
+        description: 'Set to "1" to preview without writing files'
+        required: false
+        default: '0'
+
+jobs:
+  generate-blog-post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to commit + push the new post
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install openai requests
+
+      - name: Generate blog post
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || '0' }}
+        run: python scripts/generate_blog.py
+
+      - name: Commit and push new post
+        if: ${{ github.event.inputs.dry_run != '1' }}
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add blog/ blog.html
+          # Only commit if there are actual changes
+          git diff --staged --quiet || git commit -m "blog: auto-generate post for $(date +'%B %Y') [skip ci]"
+          git push
