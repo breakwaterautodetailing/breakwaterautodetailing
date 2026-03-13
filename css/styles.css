@@ -1269,8 +1269,8 @@ p {
 }
 
 .footer-brand img {
-  height: 45px;
-  width: auto;
+  max-width: 160px;
+  height: auto;
   margin-bottom: 1rem;
 }
 
