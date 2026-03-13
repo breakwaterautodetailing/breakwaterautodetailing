@@ -54,6 +54,10 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+.hidden {
+  display: none !important;
+}
+
 body {
   font-family: var(--font-primary);
   font-size: 1rem;
