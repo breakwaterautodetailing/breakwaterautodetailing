@@ -1270,6 +1270,7 @@ p {
 
 .footer-brand img {
   height: 45px;
+  width: auto;
   margin-bottom: 1rem;
 }
 
