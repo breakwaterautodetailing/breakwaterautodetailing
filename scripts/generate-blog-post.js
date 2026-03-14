@@ -71,7 +71,7 @@ Return ONLY valid JSON (no markdown, no code fences) with these exact fields:
   "excerpt": "2 punchy sentences for the blog card, max 160 characters total",
   "readTime": "estimated read time as a number only, e.g. 5",
   "emoji": "single relevant emoji character",
-  "bodyHtml": "Full article body HTML. Use only <h2>, <h3>, <p>, <ul>, <li>, <strong> tags. 650-850 words. Include specific South Florida references (county names, city names, weather). End with a <div class=\\"blog-post-cta\\"><h3>Ready for a Professional Detail?</h3><p>...</p><a href=\\"tel:9545548941\\" class=\\"btn btn-primary\\">&#x1F4F1; Call (954) 554-8941</a></div>"
+  "bodyHtml": "Full article body HTML. Use only <h2>, <h3>, <p>, <ul>, <li>, <strong>, <a> tags. 650-850 words. Include specific South Florida references (county names, city names, weather). Naturally include 2-3 internal links using these exact paths: link to ../services.html or ../services.html#basic-wash or ../services.html#express-detail or ../services.html#premium-detail or ../services.html#elite-detail or ../areas.html or ../contact.html — use anchor text that fits naturally in the sentence. End with a <div class=\\"blog-post-cta\\"><h3>Ready for a Professional Detail?</h3><p>...</p><a href=\\"tel:9545548941\\" class=\\"btn btn-primary\\">&#x1F4F1; Call (954) 554-8941</a></div>"
 }`;
 
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
