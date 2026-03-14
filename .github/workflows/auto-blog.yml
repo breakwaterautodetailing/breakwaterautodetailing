@@ -1,0 +1,37 @@
+name: Auto-Generate Blog Post
+
+on:
+  schedule:
+    - cron: '0 14 * * 1'  # Every Monday at 9am EST (14:00 UTC)
+  workflow_dispatch:       # Also allows manual trigger from GitHub UI
+
+jobs:
+  generate-post:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate blog post
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node --experimental-vm-modules scripts/generate-blog-post.js
+
+      - name: Commit and push new post
+        run: |
+          git config --local user.email "auto-blog@breakwaterautodetailing.com"
+          git config --local user.name "Breakwater Auto Blog"
+          git add -A
+          git diff --staged --quiet || git commit -m "Auto-publish blog post [$(date +'%Y-%m-%d')]"
+          git push
