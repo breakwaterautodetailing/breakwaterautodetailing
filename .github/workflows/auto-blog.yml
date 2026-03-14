@@ -32,7 +32,20 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Check if this is an even week (run every other week)
+        id: week_check
+        if: github.event_name == 'schedule'
+        run: |
+          WEEK=$(date +%V)
+          if [ $((10#$WEEK % 2)) -eq 0 ]; then
+            echo "run=true" >> $GITHUB_OUTPUT
+          else
+            echo "run=false" >> $GITHUB_OUTPUT
+            echo "Odd week $WEEK — skipping this run."
+          fi
+
       - name: Generate blog post
+        if: github.event_name == 'workflow_dispatch' || steps.week_check.outputs.run == 'true'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
@@ -40,6 +53,7 @@ jobs:
         run: node --experimental-vm-modules scripts/generate-blog-post.js
 
       - name: Commit and push new post
+        if: github.event_name == 'workflow_dispatch' || steps.week_check.outputs.run == 'true'
         run: |
           git config --local user.email "auto-blog@breakwaterautodetailing.com"
           git config --local user.name "Breakwater Auto Blog"
