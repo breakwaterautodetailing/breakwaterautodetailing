@@ -411,10 +411,11 @@ async function main() {
     post = await generateNewsPost(headlines);
     console.log(`News hook: "${post.newsHook}"`);
   } else {
-    const nextTopic = topics.find(t => !t.used);
+    let nextTopic = topics.find(t => !t.used);
     if (!nextTopic) {
-      console.log('All topics have been used. Add more topics to scripts/blog-topics.json');
-      process.exit(0);
+      console.log('All topics used — resetting list and cycling from the beginning.');
+      topics.forEach(t => { t.used = false; });
+      nextTopic = topics[0];
     }
     console.log(`Topic: "${nextTopic.topic}"`);
     console.log(`Keywords: ${nextTopic.keywords.join(', ')}`);
