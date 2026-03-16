@@ -1031,24 +1031,62 @@ p {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.contact-socials a {
+.social-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  width: 44px;
   height: 44px;
-  padding: 0 0.875rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-md);
-  color: var(--color-white);
-  font-size: 0.95rem;
-  font-weight: 600;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.08);
   text-decoration: none;
-  transition: all var(--transition);
+  transition: transform var(--transition), background-color var(--transition), border-color var(--transition), box-shadow var(--transition), color var(--transition);
 }
 
-.contact-socials a:hover {
-  background-color: var(--color-accent);
+.social-link:hover {
+  transform: translateY(-2px);
+}
+
+.social-link:focus-visible {
+  outline: 3px solid rgba(77, 166, 255, 0.35);
+  outline-offset: 3px;
+}
+
+.social-link-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.social-link-youtube {
+  color: #ff6b6b;
+}
+
+.social-link-tiktok {
+  color: #80f7ff;
+}
+
+.social-link-x {
+  color: var(--color-white);
+}
+
+.social-link-instagram {
+  color: #ff9bc7;
+}
+
+.social-link-pinterest {
+  color: #ff8b94;
+}
+
+.contact-socials .social-link {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+}
+
+.contact-socials .social-link:hover {
+  background-color: rgba(0, 102, 255, 0.22);
+  border-color: rgba(77, 166, 255, 0.45);
+  box-shadow: 0 16px 30px rgba(0, 102, 255, 0.22);
 }
 
 /* --- Contact Form --- */
@@ -1342,6 +1380,24 @@ p {
 
 .footer-contact-item a:hover {
   color: var(--color-accent-light);
+}
+
+.footer-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  margin-top: 0.25rem;
+}
+
+.footer-socials .social-link {
+  background-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+.footer-socials .social-link:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(77, 166, 255, 0.4);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.24);
 }
 
 .footer-bottom {
