@@ -1078,6 +1078,10 @@ p {
   color: #ff8b94;
 }
 
+.social-link-facebook {
+  color: #7eb2ff;
+}
+
 .contact-socials .social-link {
   background-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
