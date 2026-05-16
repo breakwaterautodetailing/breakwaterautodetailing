@@ -13,7 +13,7 @@
 
 - [ ] Upload 10+ before/after photos with geo-tagged metadata (use photos from the `Images_webp/` folder)
 - [ ] Upload the business logo (`logo/breakwater-gbp-profile.jpg`)
-- [ ] Add a cover photo (recommend `Images_webp/IMG_3296.webp` — the black BMW M4)
+- [ ] Add a cover photo (recommend `Images_webp/bmw-m4-black-mobile-detail-fort-lauderdale.webp` — the black BMW M4)
 
 ## Business Description
 

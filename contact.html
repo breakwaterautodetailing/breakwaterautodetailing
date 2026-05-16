@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Breakwater Auto Detailing | Call (954) 554-8941 | South Florida</title>
   <meta name="description" content="Contact Breakwater Auto Detailing for a free quote. Call or text (954) 554-8941. Mobile car detailing in Broward County, Palm Beach &amp; Miami-Dade. We come to you.">
-  <link rel="canonical" href="https://breakwaterautodetailing.com/contact.html">
+  <link rel="canonical" href="https://breakwaterautodetailing.com/contact">
 
   <meta property="og:title" content="Contact Breakwater Auto Detailing | Free Quote">
   <meta property="og:description" content="Call or text (954) 554-8941 for mobile car detailing in South Florida. Broward, Palm Beach &amp; Miami-Dade.">
-  <meta property="og:image" content="logo/breakwater-og-image.jpg">
-  <meta property="og:url" content="https://breakwaterautodetailing.com/contact.html">
+  <meta property="og:image" content="https://breakwaterautodetailing.com/logo/breakwater-og-image.jpg">
+  <meta property="og:url" content="https://breakwaterautodetailing.com/contact">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Breakwater Auto Detailing">
 
@@ -23,6 +23,11 @@
   <!-- SEO & Mobile -->
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0a1628">
+  <!-- Geo signals -->
+  <meta name="geo.region" content="US-FL">
+  <meta name="geo.placename" content="Fort Lauderdale">
+  <meta name="geo.position" content="26.1224;-80.1373">
+  <meta name="ICBM" content="26.1224, -80.1373">
 
   <link rel="icon" type="image/x-icon" href="logo/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="logo/favicon-32x32.png">
@@ -33,6 +38,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <link rel="preload" as="image" href="Images_webp/range-rover-sport-white-luxury-detail-palm-beach.webp" fetchpriority="high">
   <link rel="stylesheet" href="css/styles.css">
 
   <script type="application/ld+json">
@@ -69,24 +75,35 @@
     ]
   }
   </script>
+  <!-- Schema: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://breakwaterautodetailing.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://breakwaterautodetailing.com/contact" }
+    ]
+  }
+  </script>
 </head>
 <body>
 
   <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="index.html" class="site-logo" aria-label="Breakwater Auto Detailing Home">
+      <a href="/" class="site-logo" aria-label="Breakwater Auto Detailing Home">
         <img src="logo/breakwater-logo-header.webp" alt="Breakwater Auto Detailing logo" width="160" height="65">
       </a>
       <nav class="main-nav" id="main-nav" aria-label="Main navigation">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="areas.html">Service Areas</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/areas">Service Areas</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact" class="active">Contact</a></li>
         </ul>
         <div class="nav-cta">
           <a href="tel:9545548941" class="btn btn-primary btn-block">&#x1F4F1; Call (954) 554-8941</a>
@@ -103,7 +120,7 @@
   <main>
     <!-- Page Hero -->
     <section class="page-hero">
-      <img src="Images_webp/IMG_4158.webp" alt="White Range Rover Sport after detailing at a luxury South Florida home" class="page-hero-bg" width="1200" height="900" fetchpriority="high">
+      <img src="Images_webp/range-rover-sport-white-luxury-detail-palm-beach.webp" alt="White Range Rover Sport after detailing at a luxury South Florida home" class="page-hero-bg" width="1200" height="900" fetchpriority="high">
       <div class="page-hero-overlay"></div>
       <div class="page-hero-content">
         <h1>Contact Us</h1>
@@ -155,9 +172,7 @@
               <div class="contact-detail-icon">&#x1F552;</div>
               <div>
                 <h3>Hours</h3>
-                <!-- PLACEHOLDER: replace with real hours -->
                 <p>Monday – Sunday: 7:00 AM – 7:00 PM</p>
-                <!-- END PLACEHOLDER -->
               </div>
             </div>
 
@@ -223,7 +238,7 @@
 
         <!-- Map -->
         <div class="map-wrapper">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d458767.8067498772!2d-80.52898164511723!3d26.101478818498614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9a6461c1f049d%3A0x915e7e012fa48d0f!2sBroward%20County%2C%20FL!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Breakwater Auto Detailing service area map centered on Broward County Florida"></iframe>
+          <iframe src="https://www.google.com/maps?cid=16641997490014403558&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Breakwater Auto Detailing Google Business Profile location"></iframe>
         </div>
       </div>
     </section>
@@ -240,22 +255,22 @@
         <div class="footer-section">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services &amp; Pricing</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="areas.html">Service Areas</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">Services &amp; Pricing</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/areas">Service Areas</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h4>Services</h4>
           <ul>
-            <li><a href="services.html#basic-wash">Basic Wash</a></li>
-            <li><a href="services.html#express-detail">Express Detail</a></li>
-            <li><a href="services.html#premium-detail">Premium Detail</a></li>
-            <li><a href="services.html#elite-detail">Elite Detail</a></li>
+            <li><a href="/services#basic-wash">Basic Wash</a></li>
+            <li><a href="/services#express-detail">Express Detail</a></li>
+            <li><a href="/services#premium-detail">Premium Detail</a></li>
+            <li><a href="/services#elite-detail">Elite Detail</a></li>
           </ul>
         </div>
         <div class="footer-section">

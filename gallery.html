@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Auto Detailing Gallery | Before &amp; After Photos | Breakwater Auto Detailing</title>
   <meta name="description" content="Browse our auto detailing gallery — real results from Breakwater Auto Detailing across Broward County, Palm Beach &amp; Miami-Dade. BMWs, Range Rovers, trucks &amp; more.">
-  <link rel="canonical" href="https://breakwaterautodetailing.com/gallery.html">
+  <link rel="canonical" href="https://breakwaterautodetailing.com/gallery">
 
   <meta property="og:title" content="Auto Detailing Photo Gallery | Breakwater Auto Detailing">
   <meta property="og:description" content="See real detailing results from South Florida. Professional mobile car detailing by Breakwater Auto Detailing.">
-  <meta property="og:image" content="logo/breakwater-og-image.jpg">
-  <meta property="og:url" content="https://breakwaterautodetailing.com/gallery.html">
+  <meta property="og:image" content="https://breakwaterautodetailing.com/logo/breakwater-og-image.jpg">
+  <meta property="og:url" content="https://breakwaterautodetailing.com/gallery">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Breakwater Auto Detailing">
 
@@ -23,6 +23,11 @@
   <!-- SEO & Mobile -->
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0a1628">
+  <!-- Geo signals -->
+  <meta name="geo.region" content="US-FL">
+  <meta name="geo.placename" content="Fort Lauderdale">
+  <meta name="geo.position" content="26.1224;-80.1373">
+  <meta name="ICBM" content="26.1224, -80.1373">
 
   <link rel="icon" type="image/x-icon" href="logo/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="logo/favicon-32x32.png">
@@ -33,6 +38,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <link rel="preload" as="image" href="Images_webp/bmw-m4-black-rear-paint-correction-broward.webp" fetchpriority="high">
   <link rel="stylesheet" href="css/styles.css">
 
   <script type="application/ld+json">
@@ -64,24 +70,35 @@
     ]
   }
   </script>
+  <!-- Schema: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://breakwaterautodetailing.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Gallery", "item": "https://breakwaterautodetailing.com/gallery" }
+    ]
+  }
+  </script>
 </head>
 <body>
 
   <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="index.html" class="site-logo" aria-label="Breakwater Auto Detailing Home">
+      <a href="/" class="site-logo" aria-label="Breakwater Auto Detailing Home">
         <img src="logo/breakwater-logo-header.webp" alt="Breakwater Auto Detailing logo" width="160" height="65">
       </a>
       <nav class="main-nav" id="main-nav" aria-label="Main navigation">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="gallery.html" class="active">Gallery</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="areas.html">Service Areas</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/gallery" class="active">Gallery</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/areas">Service Areas</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
         <div class="nav-cta">
           <a href="tel:9545548941" class="btn btn-primary btn-block">&#x1F4F1; Call (954) 554-8941</a>
@@ -98,7 +115,7 @@
   <main>
     <!-- Page Hero -->
     <section class="page-hero">
-      <img src="Images_webp/IMG_3299.webp" alt="Black BMW M4 rear view after full exterior detail in South Florida" class="page-hero-bg" width="1200" height="900" fetchpriority="high">
+      <img src="Images_webp/bmw-m4-black-rear-paint-correction-broward.webp" alt="Black BMW M4 rear view after full exterior detail in South Florida" class="page-hero-bg" width="1200" height="900" fetchpriority="high">
       <div class="page-hero-overlay"></div>
       <div class="page-hero-content">
         <h1>Our Detailing Gallery</h1>
@@ -117,103 +134,103 @@
         <div class="gallery-grid">
           <!-- Black BMW M4 — Front -->
           <div class="gallery-item">
-            <img src="Images_webp/IMG_3296.webp" loading="lazy" alt="Black BMW M4 coupe with mirror-finish paint after full detail in Fort Lauderdale" width="800" height="600">
+            <img src="Images_webp/bmw-m4-black-mobile-detail-fort-lauderdale.webp" loading="lazy" alt="Black BMW M4 coupe with mirror-finish paint after full detail in Fort Lauderdale" width="800" height="600">
             <div class="gallery-item-label">BMW M4 — Full Exterior Detail</div>
           </div>
 
           <!-- Black BMW M4 — Rear -->
           <div class="gallery-item">
-            <img src="Images_webp/IMG_3299.webp" loading="lazy" alt="Black BMW M4 rear view showing glossy paint correction results in Broward County" width="800" height="600">
+            <img src="Images_webp/bmw-m4-black-rear-paint-correction-broward.webp" loading="lazy" alt="Black BMW M4 rear view showing glossy paint correction results in Broward County" width="800" height="600">
             <div class="gallery-item-label">BMW M4 — Rear View After Polish</div>
           </div>
 
           <!-- Blue Ford Maverick -->
           <div class="gallery-item">
-            <img src="Images_webp/IMG_0874.webp" loading="lazy" alt="Blue Ford Maverick truck after exterior hand wash and detail in South Florida" width="800" height="600">
+            <img src="Images_webp/ford-maverick-blue-exterior-detail-broward.webp" loading="lazy" alt="Blue Ford Maverick truck after exterior hand wash and detail in South Florida" width="800" height="600">
             <div class="gallery-item-label">Ford Maverick — Exterior Wash</div>
           </div>
 
           <!-- White Hyundai Tucson -->
           <div class="gallery-item">
-            <img src="Images_webp/IMG_3320.webp" loading="lazy" alt="White Hyundai Tucson SUV freshly washed and detailed in Broward County" width="800" height="600">
+            <img src="Images_webp/hyundai-tucson-white-suv-detail-broward.webp" loading="lazy" alt="White Hyundai Tucson SUV freshly washed and detailed in Broward County" width="800" height="600">
             <div class="gallery-item-label">Hyundai Tucson — Express Detail</div>
           </div>
 
           <!-- Matte Black Range Rover — Front -->
           <div class="gallery-item">
-            <img src="Images_webp/IMG_3337.webp" loading="lazy" alt="Matte black Range Rover front view after premium detail in Fort Lauderdale garage" width="800" height="600">
+            <img src="Images_webp/range-rover-matte-black-premium-detail-fort-lauderdale.webp" loading="lazy" alt="Matte black Range Rover front view after premium detail in Fort Lauderdale garage" width="800" height="600">
             <div class="gallery-item-label">Range Rover — Premium Detail</div>
           </div>
 
           <!-- Matte Black Range Rover — Side -->
           <div class="gallery-item">
-            <img src="Images_webp/IMG_3341.webp" loading="lazy" alt="Matte black Range Rover side profile showing flawless matte finish after detailing" width="800" height="600">
+            <img src="Images_webp/range-rover-matte-black-side-detail-south-florida.webp" loading="lazy" alt="Matte black Range Rover side profile showing flawless matte finish after detailing" width="800" height="600">
             <div class="gallery-item-label">Range Rover — Side Profile</div>
           </div>
 
           <!-- Matte Gray BMW 7 Series — Rear -->
           <div class="gallery-item">
-            <img src="Images_webp/IMG_3390.webp" loading="lazy" alt="Matte gray BMW 7 Series xDrive rear view after exterior detail in South Florida" width="800" height="600">
+            <img src="Images_webp/bmw-7-series-matte-gray-rear-detail-south-florida.webp" loading="lazy" alt="Matte gray BMW 7 Series xDrive rear view after exterior detail in South Florida" width="800" height="600">
             <div class="gallery-item-label">BMW 7 Series — Exterior Detail</div>
           </div>
 
           <!-- Matte Gray BMW 7 Series — Front -->
           <div class="gallery-item">
-            <img src="Images_webp/IMG_3396.webp" loading="lazy" alt="Matte gray BMW 7 Series front view after mobile detailing in Broward County" width="800" height="600">
+            <img src="Images_webp/bmw-7-series-matte-gray-front-detail-broward.webp" loading="lazy" alt="Matte gray BMW 7 Series front view after mobile detailing in Broward County" width="800" height="600">
             <div class="gallery-item-label">BMW 7 Series — Front View</div>
           </div>
 
           <!-- Gray Jeep Wrangler Willys -->
           <div class="gallery-item">
-            <img src="Images_webp/IMG_3408.webp" loading="lazy" alt="Gray Jeep Wrangler Willys edition after full exterior detail in South Florida" width="800" height="600">
+            <img src="Images_webp/jeep-wrangler-willys-detail-south-florida.webp" loading="lazy" alt="Gray Jeep Wrangler Willys edition after full exterior detail in South Florida" width="800" height="600">
             <div class="gallery-item-label">Jeep Wrangler Willys — Full Detail</div>
           </div>
 
           <!-- Black RAM 1500 — Front -->
           <div class="gallery-item">
-            <img src="Images_webp/IMG_3918.webp" loading="lazy" alt="Black RAM 1500 truck front view after premium detail in Palm Beach County" width="800" height="600">
+            <img src="Images_webp/ram-1500-black-truck-detail-palm-beach.webp" loading="lazy" alt="Black RAM 1500 truck front view after premium detail in Palm Beach County" width="800" height="600">
             <div class="gallery-item-label">RAM 1500 — Premium Detail</div>
           </div>
 
           <!-- Black RAM 1500 — Rear -->
           <div class="gallery-item">
-            <img src="Images_webp/IMG_3919.webp" loading="lazy" alt="Black RAM 1500 truck rear view showing mirror-like paint finish after detailing" width="800" height="600">
+            <img src="Images_webp/ram-1500-black-truck-rear-mirror-finish-detail.webp" loading="lazy" alt="Black RAM 1500 truck rear view showing mirror-like paint finish after detailing" width="800" height="600">
             <div class="gallery-item-label">RAM 1500 — Rear View</div>
           </div>
 
           <!-- Gray Honda Civic -->
           <div class="gallery-item">
-            <img src="Images_webp/IMG_4027.webp" loading="lazy" alt="Gray Honda Civic coupe during mobile detailing service at home in Broward County" width="800" height="600">
+            <img src="Images_webp/honda-civic-mobile-detailing-broward.webp" loading="lazy" alt="Gray Honda Civic coupe during mobile detailing service at home in Broward County" width="800" height="600">
             <div class="gallery-item-label">Honda Civic — Mobile Detail In Progress</div>
           </div>
 
           <!-- Tesla Cybertruck -->
           <div class="gallery-item">
-            <img src="Images_webp/IMG_4113.webp" loading="lazy" alt="Tesla Cybertruck after exterior wash and detail in Broward County Florida" width="800" height="600">
+            <img src="Images_webp/tesla-cybertruck-exterior-detail-broward.webp" loading="lazy" alt="Tesla Cybertruck after exterior wash and detail in Broward County Florida" width="800" height="600">
             <div class="gallery-item-label">Tesla Cybertruck — Exterior Detail</div>
           </div>
 
           <!-- Classic Chevelle SS -->
           <div class="gallery-item">
-            <img src="Images_webp/IMG_4142.webp" loading="lazy" alt="Yellow classic Chevrolet Chevelle SS after hand polish and detail in South Florida" width="800" height="600">
+            <img src="Images_webp/classic-chevrolet-chevelle-ss-yellow-polish-south-florida.webp" loading="lazy" alt="Yellow classic Chevrolet Chevelle SS after hand polish and detail in South Florida" width="800" height="600">
             <div class="gallery-item-label">Classic Chevelle SS — Hand Polish</div>
           </div>
 
           <!-- White Range Rover Sport -->
           <div class="gallery-item">
-            <img src="Images_webp/IMG_4158.webp" loading="lazy" alt="White Range Rover Sport after full detail at luxury home in Palm Beach County" width="800" height="600">
+            <img src="Images_webp/range-rover-sport-white-luxury-detail-palm-beach.webp" loading="lazy" alt="White Range Rover Sport after full detail at luxury home in Palm Beach County" width="800" height="600">
             <div class="gallery-item-label">Range Rover Sport — Full Detail</div>
           </div>
 
           <!-- Black Toyota Camry — Exterior -->
           <div class="gallery-item">
-            <img src="Images_webp/IMG_4174.webp" loading="lazy" alt="Black Toyota Camry exterior after professional detailing in Broward County" width="800" height="600">
+            <img src="Images_webp/toyota-camry-black-exterior-detail-broward.webp" loading="lazy" alt="Black Toyota Camry exterior after professional detailing in Broward County" width="800" height="600">
             <div class="gallery-item-label">Toyota Camry — Exterior Detail</div>
           </div>
 
           <!-- Black Toyota Camry — Interior -->
           <div class="gallery-item">
-            <img src="Images_webp/IMG_4180.webp" loading="lazy" alt="Toyota Camry clean interior after full interior detail showing spotless seats and dashboard" width="800" height="600">
+            <img src="Images_webp/toyota-camry-interior-detail-south-florida.webp" loading="lazy" alt="Toyota Camry clean interior after full interior detail showing spotless seats and dashboard" width="800" height="600">
             <div class="gallery-item-label">Toyota Camry — Interior Detail</div>
           </div>
         </div>
@@ -244,22 +261,22 @@
         <div class="footer-section">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services &amp; Pricing</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="areas.html">Service Areas</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">Services &amp; Pricing</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/areas">Service Areas</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h4>Services</h4>
           <ul>
-            <li><a href="services.html#basic-wash">Basic Wash</a></li>
-            <li><a href="services.html#express-detail">Express Detail</a></li>
-            <li><a href="services.html#premium-detail">Premium Detail</a></li>
-            <li><a href="services.html#elite-detail">Elite Detail</a></li>
+            <li><a href="/services#basic-wash">Basic Wash</a></li>
+            <li><a href="/services#express-detail">Express Detail</a></li>
+            <li><a href="/services#premium-detail">Premium Detail</a></li>
+            <li><a href="/services#elite-detail">Elite Detail</a></li>
           </ul>
         </div>
         <div class="footer-section">

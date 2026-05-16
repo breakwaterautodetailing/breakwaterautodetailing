@@ -1,15 +1,106 @@
 [
   {
+    "id": "mobile-vs-shop-detailing-south-florida",
+    "title": "Mobile vs Shop Car Detailing in South Florida: Which Is Worth It?",
+    "slug": "mobile-vs-shop-detailing-south-florida",
+    "date": "2026-05-16",
+    "date_display": "May 16, 2026",
+    "excerpt": "Same quality, different venue. An honest breakdown of mobile vs shop detailing — price, quality, time cost, and when each one is actually the right call.",
+    "category": "Buyer's Guide",
+    "read_time": "8 min read",
+    "gradient": "grad-2",
+    "icon": "🚙",
+    "file": "blog/mobile-vs-shop-detailing-south-florida"
+  },
+  {
+    "id": "ceramic-coating-vs-paint-correction-florida",
+    "title": "Ceramic Coating vs Paint Correction in Florida: Which Does Your Car Need?",
+    "slug": "ceramic-coating-vs-paint-correction-florida",
+    "date": "2026-05-16",
+    "date_display": "May 16, 2026",
+    "excerpt": "Two totally different services — and most South Florida drivers confuse them. Which fixes what, what order they go in, and why coating bad paint locks defects in for years.",
+    "category": "Paint Care",
+    "read_time": "7 min read",
+    "gradient": "grad-3",
+    "icon": "💎",
+    "file": "blog/ceramic-coating-vs-paint-correction-florida"
+  },
+  {
+    "id": "best-time-to-detail-car-florida",
+    "title": "Best Time of Year to Detail Your Car in Florida (And How Often)",
+    "slug": "best-time-to-detail-car-florida",
+    "date": "2026-05-16",
+    "date_display": "May 16, 2026",
+    "excerpt": "Month-by-month UV, salt, pollen, and rain — plus the exact maintenance cadence that keeps a South Florida vehicle looking good year-round.",
+    "category": "Seasonal Care",
+    "read_time": "7 min read",
+    "gradient": "grad-4",
+    "icon": "📅",
+    "file": "blog/best-time-to-detail-car-florida"
+  },
+  {
+    "id": "mobile-car-detailing-vs-car-wash",
+    "title": "Mobile Car Detailing vs. Drive-Through Car Wash: Which is Best?",
+    "slug": "mobile-car-detailing-vs-car-wash",
+    "date": "2026-05-11",
+    "date_display": "May 11, 2026",
+    "excerpt": "Wondering whether to choose mobile car detailing or a drive-through car wash? Discover the benefits of professional detailing services today!",
+    "category": "Car Care Tips",
+    "read_time": "7 min read",
+    "gradient": "grad-1",
+    "icon": "🚗",
+    "file": "blog/mobile-car-detailing-vs-car-wash"
+  },
+  {
+    "id": "paint-oxidation-florida",
+    "title": "Understanding Paint Oxidation in Florida",
+    "slug": "paint-oxidation-florida",
+    "date": "2026-03-30",
+    "date_display": "March 30, 2026",
+    "excerpt": "What paint oxidation actually is, why South Florida cars hit it sooner, and the fix that actually works versus the ones that don't.",
+    "category": "Paint Care",
+    "read_time": "7 min read",
+    "gradient": "grad-2",
+    "icon": "✨",
+    "file": "blog/paint-oxidation-florida"
+  },
+  {
+    "id": "rainy-season-car-care-florida",
+    "title": "Why Rainy Season Car Care in Florida Matters",
+    "slug": "rainy-season-car-care-florida",
+    "date": "2026-03-16",
+    "date_display": "March 16, 2026",
+    "excerpt": "South Florida's rainy season does more damage than dirty rinse water. Here's what acidic rain, hard water spots, and trapped moisture do to your finish.",
+    "category": "Seasonal Care",
+    "read_time": "6 min read",
+    "gradient": "grad-3",
+    "icon": "🌧️",
+    "file": "blog/rainy-season-car-care-florida"
+  },
+  {
+    "id": "salt-air-car-damage-florida",
+    "title": "Salt Air Car Damage in Florida: Protect Your Paint",
+    "slug": "salt-air-car-damage-florida",
+    "date": "2026-03-14",
+    "date_display": "March 14, 2026",
+    "excerpt": "Coastal salt air corrodes more than just brightwork. How Florida salt fog attacks paint, trim, and undercarriage — plus the protection routine that holds it back.",
+    "category": "Paint Protection",
+    "read_time": "6 min read",
+    "gradient": "grad-4",
+    "icon": "🌊",
+    "file": "blog/salt-air-car-damage-florida"
+  },
+  {
     "id": "south-florida-spring-sun-car-damage-2026",
     "title": "South Florida's Spring Sun Is Back — Here's What It's Doing to Your Car",
     "slug": "south-florida-spring-sun-car-damage-2026",
     "date": "2026-03-01",
     "date_display": "March 1, 2026",
-    "excerpt": "Florida's spring UV index is peaking across Broward and Miami-Dade. Here's how pollen season, coastal salt air, and relentless sunshine silently degrade your paint — and what to do about it.",
+    "excerpt": "Florida's spring UV index is peaking across Broward and Miami-Dade. Here's how pollen season, coastal salt air, and relentless sunshine silently degrade your paint.",
     "category": "Car Care Tips",
     "read_time": "6 min read",
     "gradient": "grad-1",
     "icon": "☀️",
-    "file": "blog/south-florida-spring-sun-car-damage-2026.html"
+    "file": "blog/south-florida-spring-sun-car-damage-2026"
   }
 ]

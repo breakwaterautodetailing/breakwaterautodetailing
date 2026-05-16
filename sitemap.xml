@@ -1,44 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Core pages -->
   <url>
-    <loc>https://breakwaterautodetailing.com/index.html</loc>
-    <lastmod>2026-03-13</lastmod>
+    <loc>https://breakwaterautodetailing.com/</loc>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://breakwaterautodetailing.com/Images_webp/bmw-m4-black-mobile-detail-fort-lauderdale.webp</image:loc>
+      <image:caption>Professional mobile car detailing on a black BMW M4 in South Florida</image:caption>
+    </image:image>
   </url>
   <url>
-    <loc>https://breakwaterautodetailing.com/services.html</loc>
-    <lastmod>2026-03-13</lastmod>
+    <loc>https://breakwaterautodetailing.com/services</loc>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://breakwaterautodetailing.com/areas.html</loc>
-    <lastmod>2026-03-13</lastmod>
+    <loc>https://breakwaterautodetailing.com/areas</loc>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://breakwaterautodetailing.com/contact.html</loc>
-    <lastmod>2026-03-13</lastmod>
+    <loc>https://breakwaterautodetailing.com/contact</loc>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://breakwaterautodetailing.com/gallery.html</loc>
-    <lastmod>2026-03-13</lastmod>
+    <loc>https://breakwaterautodetailing.com/gallery</loc>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://breakwaterautodetailing.com/blog.html</loc>
-    <lastmod>2026-03-13</lastmod>
+    <loc>https://breakwaterautodetailing.com/about</loc>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://breakwaterautodetailing.com/about.html</loc>
-    <lastmod>2026-03-13</lastmod>
+    <loc>https://breakwaterautodetailing.com/blog</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- City landing pages -->
+  <url>
+    <loc>https://breakwaterautodetailing.com/mobile-car-detailing-fort-lauderdale</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://breakwaterautodetailing.com/mobile-car-detailing-miami</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://breakwaterautodetailing.com/mobile-car-detailing-boca-raton</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Blog posts -->
+  <url>
+    <loc>https://breakwaterautodetailing.com/blog/mobile-car-detailing-vs-car-wash</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://breakwaterautodetailing.com/blog/paint-oxidation-florida</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://breakwaterautodetailing.com/blog/rainy-season-car-care-florida</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://breakwaterautodetailing.com/blog/salt-air-car-damage-florida</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://breakwaterautodetailing.com/blog/south-florida-spring-sun-car-damage-2026</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://breakwaterautodetailing.com/blog/mobile-vs-shop-detailing-south-florida</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://breakwaterautodetailing.com/blog/ceramic-coating-vs-paint-correction-florida</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://breakwaterautodetailing.com/blog/best-time-to-detail-car-florida</loc>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

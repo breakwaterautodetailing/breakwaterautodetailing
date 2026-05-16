@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# /review uses <meta name="robots" content="noindex">; Google needs to crawl it to honor that,
+# so we do NOT Disallow it here. Disallow + noindex is a known SEO anti-pattern.
+
 Sitemap: https://breakwaterautodetailing.com/sitemap.xml
+Sitemap: https://breakwaterautodetailing.com/image-sitemap.xml

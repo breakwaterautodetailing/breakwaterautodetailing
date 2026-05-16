@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Service Areas — Mobile Car Detailing in Broward, Palm Beach &amp; Miami-Dade | Breakwater Auto Detailing</title>
   <meta name="description" content="Breakwater Auto Detailing serves Broward County, Palm Beach County &amp; Miami-Dade County. Mobile car detailing in Fort Lauderdale, Boca Raton, Miami, West Palm Beach &amp; more. Call (954) 554-8941.">
-  <link rel="canonical" href="https://breakwaterautodetailing.com/areas.html">
+  <link rel="canonical" href="https://breakwaterautodetailing.com/areas">
 
   <meta property="og:title" content="Service Areas | Breakwater Auto Detailing — South Florida Mobile Detailing">
   <meta property="og:description" content="Mobile car detailing across Broward, Palm Beach &amp; Miami-Dade counties. Fort Lauderdale, Boca Raton, Miami &amp; more.">
-  <meta property="og:image" content="logo/breakwater-og-image.jpg">
-  <meta property="og:url" content="https://breakwaterautodetailing.com/areas.html">
+  <meta property="og:image" content="https://breakwaterautodetailing.com/logo/breakwater-og-image.jpg">
+  <meta property="og:url" content="https://breakwaterautodetailing.com/areas">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Breakwater Auto Detailing">
 
@@ -23,6 +23,11 @@
   <!-- SEO & Mobile -->
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0a1628">
+  <!-- Geo signals -->
+  <meta name="geo.region" content="US-FL">
+  <meta name="geo.placename" content="Fort Lauderdale">
+  <meta name="geo.position" content="26.1224;-80.1373">
+  <meta name="ICBM" content="26.1224, -80.1373">
 
   <link rel="icon" type="image/x-icon" href="logo/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="logo/favicon-32x32.png">
@@ -33,6 +38,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <link rel="preload" as="image" href="Images_webp/ram-1500-black-truck-detail-palm-beach.webp" fetchpriority="high">
   <link rel="stylesheet" href="css/styles.css">
 
   <script type="application/ld+json">
@@ -95,24 +101,35 @@
     ]
   }
   </script>
+  <!-- Schema: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://breakwaterautodetailing.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Service Areas", "item": "https://breakwaterautodetailing.com/areas" }
+    ]
+  }
+  </script>
 </head>
 <body>
 
   <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="index.html" class="site-logo" aria-label="Breakwater Auto Detailing Home">
+      <a href="/" class="site-logo" aria-label="Breakwater Auto Detailing Home">
         <img src="logo/breakwater-logo-header.webp" alt="Breakwater Auto Detailing logo" width="160" height="65">
       </a>
       <nav class="main-nav" id="main-nav" aria-label="Main navigation">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="areas.html" class="active">Service Areas</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/areas" class="active">Service Areas</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
         <div class="nav-cta">
           <a href="tel:9545548941" class="btn btn-primary btn-block">&#x1F4F1; Call (954) 554-8941</a>
@@ -129,7 +146,7 @@
   <main>
     <!-- Page Hero -->
     <section class="page-hero">
-      <img src="Images_webp/IMG_3918.webp" alt="Black RAM 1500 truck after mobile detailing service in South Florida" class="page-hero-bg" width="1200" height="900" fetchpriority="high">
+      <img src="Images_webp/ram-1500-black-truck-detail-palm-beach.webp" alt="Black RAM 1500 truck after mobile detailing service in South Florida" class="page-hero-bg" width="1200" height="900" fetchpriority="high">
       <div class="page-hero-overlay"></div>
       <div class="page-hero-content">
         <h1>Mobile Detailing Service Areas</h1>
@@ -145,8 +162,8 @@
             <h2>Broward County</h2>
             <div class="area-cities">
               <div class="area-city">
-                <h3>Fort Lauderdale</h3>
-                <p>Looking for mobile car detailing in Fort Lauderdale? Breakwater Auto Detailing brings professional-grade detailing directly to your home or office in Fort Lauderdale and surrounding areas. From Las Olas to downtown, we've got you covered.</p>
+                <h3><a href="/mobile-car-detailing-fort-lauderdale">Fort Lauderdale</a></h3>
+                <p>Looking for <a href="/mobile-car-detailing-fort-lauderdale">mobile car detailing in Fort Lauderdale</a>? Breakwater Auto Detailing brings professional-grade detailing directly to your home or office in Fort Lauderdale and surrounding areas. From Las Olas to downtown, we've got you covered.</p>
               </div>
               <div class="area-city">
                 <h3>Hollywood</h3>
@@ -158,7 +175,7 @@
               </div>
               <div class="area-city">
                 <h3>Miramar</h3>
-                <p>Need auto detailing in Miramar? We provide full-service mobile detailing throughout the Miramar area, from <a href="services.html#basic-wash">basic washes</a> to <a href="services.html#elite-detail">full paint correction</a>.</p>
+                <p>Need auto detailing in Miramar? We provide full-service mobile detailing throughout the Miramar area, from <a href="/services#basic-wash">basic washes</a> to <a href="/services#elite-detail">full paint correction</a>.</p>
               </div>
               <div class="area-city">
                 <h3>Coral Springs</h3>
@@ -174,7 +191,7 @@
               </div>
               <div class="area-city">
                 <h3>Plantation</h3>
-                <p>Looking for car detailing in Plantation? Breakwater Auto Detailing offers <a href="services.html#packages">packages from basic hand washes to full paint correction</a> — all performed at your location in Plantation.</p>
+                <p>Looking for car detailing in Plantation? Breakwater Auto Detailing offers <a href="/services#packages">packages from basic hand washes to full paint correction</a> — all performed at your location in Plantation.</p>
               </div>
               <div class="area-city">
                 <h3>Sunrise</h3>
@@ -186,7 +203,7 @@
               </div>
               <div class="area-city">
                 <h3>Weston</h3>
-                <p>Weston's luxury vehicles deserve luxury care. Our <a href="services.html#premium-detail">premium</a> and <a href="services.html#elite-detail">elite detailing packages</a> are popular among Weston homeowners who want their cars looking showroom-fresh.</p>
+                <p>Weston's luxury vehicles deserve luxury care. Our <a href="/services#premium-detail">premium</a> and <a href="/services#elite-detail">elite detailing packages</a> are popular among Weston homeowners who want their cars looking showroom-fresh.</p>
               </div>
               <div class="area-city">
                 <h3>Coconut Creek</h3>
@@ -210,8 +227,8 @@
                 <p>Breakwater Auto Detailing offers top-tier mobile car detailing in West Palm Beach. From the waterfront to CityPlace, we bring our professional equipment directly to your West Palm Beach location.</p>
               </div>
               <div class="area-city">
-                <h3>Boca Raton</h3>
-                <p>Boca Raton's luxury car owners trust us for meticulous mobile detailing. Whether it's <a href="services.html#elite-detail">paint correction</a> on a sports car or a full interior reset on an SUV, we deliver exceptional results in Boca.</p>
+                <h3><a href="/mobile-car-detailing-boca-raton">Boca Raton</a></h3>
+                <p>Boca Raton's luxury car owners trust us for meticulous <a href="/mobile-car-detailing-boca-raton">mobile detailing in Boca</a>. Whether it's <a href="/services#elite-detail">paint correction</a> on a sports car or a full interior reset on an SUV, we deliver exceptional results in Boca.</p>
               </div>
               <div class="area-city">
                 <h3>Boynton Beach</h3>
@@ -223,7 +240,7 @@
               </div>
               <div class="area-city">
                 <h3>Lake Worth</h3>
-                <p>Need mobile car detailing in Lake Worth? We offer a <a href="services.html#packages">full range of packages</a> from basic washes to elite paint correction — all at your Lake Worth location.</p>
+                <p>Need mobile car detailing in Lake Worth? We offer a <a href="/services#packages">full range of packages</a> from basic washes to elite paint correction — all at your Lake Worth location.</p>
               </div>
               <div class="area-city">
                 <h3>Jupiter</h3>
@@ -251,16 +268,16 @@
             <h2>Miami-Dade County</h2>
             <div class="area-cities">
               <div class="area-city">
-                <h3>Miami</h3>
-                <p>Breakwater Auto Detailing brings professional mobile car detailing to Miami. From Brickell to Wynwood and everywhere in between, we deliver premium detailing results at your Miami location.</p>
+                <h3><a href="/mobile-car-detailing-miami">Miami</a></h3>
+                <p>Breakwater Auto Detailing brings <a href="/mobile-car-detailing-miami">professional mobile car detailing to Miami</a>. From Brickell to Wynwood and everywhere in between, we deliver premium detailing results at your Miami location.</p>
               </div>
               <div class="area-city">
                 <h3>Miami Beach</h3>
-                <p>Keep your car looking its best in Miami Beach with our mobile detailing service. We offer <a href="services.html#packages">paint protection packages</a> specifically designed to combat the salt air and sun exposure.</p>
+                <p>Keep your car looking its best in Miami Beach with our mobile detailing service. We offer <a href="/services#packages">paint protection packages</a> specifically designed to combat the salt air and sun exposure.</p>
               </div>
               <div class="area-city">
                 <h3>Hialeah</h3>
-                <p>Hialeah residents can enjoy affordable, professional mobile car detailing from Breakwater. Our <a href="services.html#packages">packages range from quick hand washes to comprehensive elite details</a> — all at your door.</p>
+                <p>Hialeah residents can enjoy affordable, professional mobile car detailing from Breakwater. Our <a href="/services#packages">packages range from quick hand washes to comprehensive elite details</a> — all at your door.</p>
               </div>
               <div class="area-city">
                 <h3>Doral</h3>
@@ -268,7 +285,7 @@
               </div>
               <div class="area-city">
                 <h3>Aventura</h3>
-                <p>Aventura's luxury community deserves luxury detailing. Breakwater offers <a href="services.html#premium-detail">premium</a> and <a href="services.html#elite-detail">elite packages</a> that keep your vehicle in immaculate condition — all performed at your Aventura location.</p>
+                <p>Aventura's luxury community deserves luxury detailing. Breakwater offers <a href="/services#premium-detail">premium</a> and <a href="/services#elite-detail">elite packages</a> that keep your vehicle in immaculate condition — all performed at your Aventura location.</p>
               </div>
               <div class="area-city">
                 <h3>Kendall</h3>
@@ -300,11 +317,11 @@
           <p>Don't see your city listed? We likely serve your area too. Call or text us to confirm.</p>
         </div>
         <div class="map-wrapper">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d458767.8067498772!2d-80.52898164511723!3d26.101478818498614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9a6461c1f049d%3A0x915e7e012fa48d0f!2sBroward%20County%2C%20FL!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Breakwater Auto Detailing service area map centered on Broward County Florida"></iframe>
+          <iframe src="https://www.google.com/maps?cid=16641997490014403558&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Breakwater Auto Detailing Google Business Profile location"></iframe>
         </div>
         <div class="section-actions">
           <a href="tel:9545548941" class="btn btn-primary btn-lg">&#x1F4DE; Call (954) 554-8941</a>
-          <a href="contact.html" class="btn btn-secondary btn-lg">Contact Us</a>
+          <a href="/contact" class="btn btn-secondary btn-lg">Contact Us</a>
         </div>
       </div>
     </section>
@@ -333,22 +350,22 @@
         <div class="footer-section">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services &amp; Pricing</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="areas.html">Service Areas</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">Services &amp; Pricing</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/areas">Service Areas</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h4>Services</h4>
           <ul>
-            <li><a href="services.html#basic-wash">Basic Wash</a></li>
-            <li><a href="services.html#express-detail">Express Detail</a></li>
-            <li><a href="services.html#premium-detail">Premium Detail</a></li>
-            <li><a href="services.html#elite-detail">Elite Detail</a></li>
+            <li><a href="/services#basic-wash">Basic Wash</a></li>
+            <li><a href="/services#express-detail">Express Detail</a></li>
+            <li><a href="/services#premium-detail">Premium Detail</a></li>
+            <li><a href="/services#elite-detail">Elite Detail</a></li>
           </ul>
         </div>
         <div class="footer-section">
