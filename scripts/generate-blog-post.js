@@ -71,7 +71,7 @@ Return ONLY valid JSON (no markdown, no code fences) with these exact fields:
   "excerpt": "2 punchy sentences for the blog card, max 160 characters total",
   "readTime": "estimated read time as a number only, e.g. 5",
   "emoji": "single relevant emoji character",
-  "bodyHtml": "Full article body HTML. Use only <h2>, <h3>, <p>, <ul>, <li>, <strong>, <a> tags. 650-850 words. Include specific South Florida references (county names, city names, weather). Naturally include 2-3 internal links using these exact paths: link to ../services.html or ../services.html#basic-wash or ../services.html#express-detail or ../services.html#premium-detail or ../services.html#elite-detail or ../areas.html or ../contact.html — use anchor text that fits naturally in the sentence. End with a <div class=\\"blog-post-cta\\"><h3>Ready for a Professional Detail?</h3><p>...</p><a href=\\"tel:9545548941\\" class=\\"btn btn-primary\\">&#x1F4F1; Call (954) 554-8941</a></div>"
+  "bodyHtml": "Full article body HTML. Use only <h2>, <h3>, <p>, <ul>, <li>, <strong>, <a> tags. 650-850 words. Include specific South Florida references (county names, city names, weather). Naturally include 2-3 internal links using these exact clean-URL paths: /services or /services#basic-wash or /services#express-detail or /services#premium-detail or /services#elite-detail or /areas or /contact or /mobile-car-detailing-fort-lauderdale or /mobile-car-detailing-miami or /mobile-car-detailing-boca-raton — use anchor text that fits naturally in the sentence. End with a <div class=\\"blog-post-cta\\"><h3>Ready for a Professional Detail?</h3><p>...</p><a href=\\"tel:9545548941\\" class=\\"btn btn-primary\\">&#x1F4F1; Call (954) 554-8941</a></div>"
 }`;
 
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -122,7 +122,7 @@ Return ONLY valid JSON (no markdown, no code fences) with these exact fields:
   "readTime": "estimated read time as a number only, e.g. 5",
   "emoji": "single relevant emoji character",
   "newsHook": "The headline or story you chose as the hook (plain text)",
-  "bodyHtml": "Full article body HTML. Use only <h2>, <h3>, <p>, <ul>, <li>, <strong> tags. 650-850 words. Reference the news story in the opening, then pivot to car care advice relevant to South Florida. End with a <div class=\\"blog-post-cta\\"><h3>Ready for a Professional Detail?</h3><p>...</p><a href=\\"tel:9545548941\\" class=\\"btn btn-primary\\">&#x1F4F1; Call (954) 554-8941</a></div>"
+  "bodyHtml": "Full article body HTML. Use only <h2>, <h3>, <p>, <ul>, <li>, <strong>, <a> tags. 650-850 words. Reference the news story in the opening, then pivot to car care advice relevant to South Florida. Include 1-2 internal links using clean URLs like /services or /services#elite-detail or /areas or /contact. End with a <div class=\\"blog-post-cta\\"><h3>Ready for a Professional Detail?</h3><p>...</p><a href=\\"tel:9545548941\\" class=\\"btn btn-primary\\">&#x1F4F1; Call (954) 554-8941</a></div>"
 }`;
 
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -152,32 +152,41 @@ Return ONLY valid JSON (no markdown, no code fences) with these exact fields:
 
 // Generate individual blog post HTML page
 function buildPostPage(post, date) {
+  const canonicalUrl = `https://breakwaterautodetailing.com/blog/${post.slug}`;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${post.title} | Breakwater Auto Detailing</title>
+  <title>${post.title} | Breakwater</title>
   <meta name="description" content="${post.metaDescription}">
-  <link rel="canonical" href="https://breakwaterautodetailing.com/blog/${post.slug}.html">
+  <link rel="canonical" href="${canonicalUrl}">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="${post.title} | Breakwater Auto Detailing">
+  <meta property="og:title" content="${post.title}">
   <meta property="og:description" content="${post.metaDescription}">
   <meta property="og:image" content="https://breakwaterautodetailing.com/logo/breakwater-og-image.jpg">
-  <meta property="og:url" content="https://breakwaterautodetailing.com/blog/${post.slug}.html">
+  <meta property="og:url" content="${canonicalUrl}">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Breakwater Auto Detailing">
+  <meta property="article:published_time" content="${date.iso}">
+  <meta property="article:author" content="Breakwater Auto Detailing">
+  <meta property="article:section" content="${post.tag}">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="${post.title} | Breakwater Auto Detailing">
+  <meta name="twitter:title" content="${post.title}">
   <meta name="twitter:description" content="${post.metaDescription}">
   <meta name="twitter:image" content="https://breakwaterautodetailing.com/logo/breakwater-og-image.jpg">
 
   <!-- SEO & Mobile -->
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0a1628">
+  <!-- Geo signals -->
+  <meta name="geo.region" content="US-FL">
+  <meta name="geo.placename" content="Fort Lauderdale">
+  <meta name="geo.position" content="26.1224;-80.1373">
+  <meta name="ICBM" content="26.1224, -80.1373">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="../logo/favicon.ico">
@@ -198,8 +207,8 @@ function buildPostPage(post, date) {
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "${post.title}",
-    "description": "${post.metaDescription}",
+    "headline": "${post.title.replace(/"/g, '\\"')}",
+    "description": "${post.metaDescription.replace(/"/g, '\\"')}",
     "datePublished": "${date.iso}",
     "dateModified": "${date.iso}",
     "author": {
@@ -217,8 +226,21 @@ function buildPostPage(post, date) {
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://breakwaterautodetailing.com/blog/${post.slug}.html"
+      "@id": "${canonicalUrl}"
     }
+  }
+  </script>
+
+  <!-- Schema: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://breakwaterautodetailing.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://breakwaterautodetailing.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "${post.title.replace(/"/g, '\\"')}", "item": "${canonicalUrl}" }
+    ]
   }
   </script>
 </head>
@@ -227,18 +249,18 @@ function buildPostPage(post, date) {
   <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="../index.html" class="site-logo" aria-label="Breakwater Auto Detailing Home">
+      <a href="/" class="site-logo" aria-label="Breakwater Auto Detailing Home">
         <img src="../logo/breakwater-logo-header.webp" alt="Breakwater Auto Detailing logo" width="160" height="65">
       </a>
       <nav class="main-nav" id="main-nav" aria-label="Main navigation">
         <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../services.html">Services</a></li>
-          <li><a href="../gallery.html">Gallery</a></li>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../areas.html">Service Areas</a></li>
-          <li><a href="../blog.html" class="active">Blog</a></li>
-          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/areas">Service Areas</a></li>
+          <li><a href="/blog" class="active">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
         <div class="nav-cta">
           <a href="tel:9545548941" class="btn btn-primary btn-block">&#x1F4F1; Call (954) 554-8941</a>
@@ -246,9 +268,7 @@ function buildPostPage(post, date) {
       </nav>
       <a href="tel:9545548941" class="btn btn-primary btn-sm header-cta">Call Now</a>
       <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
     </div>
     <div class="nav-overlay" aria-hidden="true"></div>
@@ -260,8 +280,9 @@ function buildPostPage(post, date) {
     <section class="page-hero">
       <div class="page-hero-overlay"></div>
       <div class="container page-hero-content">
-        <span class="hero-badge">${post.tag}</span>
+        <span class="hero-badge">${post.tag} &bull; ${date.display}</span>
         <h1>${post.title}</h1>
+        <p>${post.readTime} min read &bull; By Breakwater Auto Detailing</p>
       </div>
     </section>
 
@@ -270,7 +291,7 @@ function buildPostPage(post, date) {
       <div class="container">
         <div class="blog-post-wrap">
 
-          <a href="../blog.html" class="blog-back-link">&larr; Back to Blog</a>
+          <a href="/blog" class="blog-back-link">&larr; Back to all articles</a>
 
           <div class="blog-post-meta">
             <span class="blog-tag">${post.tag}</span>
@@ -312,37 +333,36 @@ function buildPostPage(post, date) {
         <div class="footer-section">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../services.html">Services &amp; Pricing</a></li>
-            <li><a href="../gallery.html">Gallery</a></li>
-            <li><a href="../about.html">About Us</a></li>
-            <li><a href="../areas.html">Service Areas</a></li>
-            <li><a href="../blog.html">Blog</a></li>
-            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">Services &amp; Pricing</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/areas">Service Areas</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h4>Services</h4>
           <ul>
-            <li><a href="../services.html#basic-wash">Basic Wash</a></li>
-            <li><a href="../services.html#express-detail">Express Detail</a></li>
-            <li><a href="../services.html#premium-detail">Premium Detail</a></li>
-            <li><a href="../services.html#elite-detail">Elite Detail</a></li>
+            <li><a href="/services#basic-wash">Basic Wash</a></li>
+            <li><a href="/services#express-detail">Express Detail</a></li>
+            <li><a href="/services#premium-detail">Premium Detail</a></li>
+            <li><a href="/services#elite-detail">Elite Detail</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h4>Contact</h4>
-          <div class="footer-contact-item">
-            &#x1F4F1; <a href="tel:9545548941">(954) 554-8941</a>
-          </div>
-          <div class="footer-contact-item">
-            &#x1F4E7; <a href="mailto:info@breakwaterautodetailing.com">info@breakwaterautodetailing.com</a>
-          </div>
-          <div class="footer-contact-item">
-            &#x1F4CD; Serving Broward, Palm Beach &amp; Miami-Dade
-          </div>
-          <div class="footer-contact-item">
-            <a href="https://www.instagram.com/eastcoast.detail" target="_blank" rel="noopener noreferrer">&#x1F4F8; @eastcoast.detail</a>
+          <div class="footer-contact-item">&#x1F4F1; <a href="tel:9545548941">(954) 554-8941</a></div>
+          <div class="footer-contact-item">&#x1F4E7; <a href="mailto:info@breakwaterautodetailing.com">info@breakwaterautodetailing.com</a></div>
+          <div class="footer-contact-item">&#x1F4CD; Serving Broward, Palm Beach &amp; Miami-Dade</div>
+          <div class="footer-socials">
+            <a class="social-link social-link-youtube" href="https://www.youtube.com/@BreakwaterAutoDetailing" target="_blank" rel="noopener noreferrer" aria-label="Visit Breakwater Auto Detailing on YouTube" title="YouTube"><span class="social-link-icon" aria-hidden="true">&#9654;</span><span class="sr-only">YouTube</span></a>
+            <a class="social-link social-link-tiktok" href="https://www.tiktok.com/@breakwaterauto" target="_blank" rel="noopener noreferrer" aria-label="Visit Breakwater Auto Detailing on TikTok" title="TikTok"><span class="social-link-icon" aria-hidden="true">&#9835;</span><span class="sr-only">TikTok</span></a>
+            <a class="social-link social-link-x" href="https://x.com/breakwaterauto" target="_blank" rel="noopener noreferrer" aria-label="Visit Breakwater Auto Detailing on X" title="X"><span class="social-link-icon" aria-hidden="true">X</span><span class="sr-only">X</span></a>
+            <a class="social-link social-link-instagram" href="https://www.instagram.com/breakwater.detail/" target="_blank" rel="noopener noreferrer" aria-label="Visit Breakwater Auto Detailing on Instagram" title="Instagram"><span class="social-link-icon" aria-hidden="true">&#128247;</span><span class="sr-only">Instagram</span></a>
+            <a class="social-link social-link-facebook" href="https://www.facebook.com/profile.php?id=61578484807400" target="_blank" rel="noopener noreferrer" aria-label="Visit Breakwater Auto Detailing on Facebook" title="Facebook"><span class="social-link-icon" aria-hidden="true">f</span><span class="sr-only">Facebook</span></a>
+            <a class="social-link social-link-pinterest" href="https://www.pinterest.com/breakwaterauto/" target="_blank" rel="noopener noreferrer" aria-label="Visit Breakwater Auto Detailing on Pinterest" title="Pinterest"><span class="social-link-icon" aria-hidden="true">&#128204;</span><span class="sr-only">Pinterest</span></a>
           </div>
         </div>
       </div>
@@ -363,7 +383,7 @@ function buildPostPage(post, date) {
 </html>`;
 }
 
-// Generate blog card HTML to insert into blog.html
+// Generate blog card HTML to insert into blog.html (uses clean URL)
 function buildBlogCard(post, date, grad) {
   return `
           <!-- Post: ${date.display} -->
@@ -377,9 +397,9 @@ function buildBlogCard(post, date, grad) {
                 <span class="blog-date">${date.display}</span>
                 <span class="blog-read-time">&#x23F1; ${post.readTime} min read</span>
               </div>
-              <h3><a href="blog/${post.slug}.html">${post.title}</a></h3>
+              <h3><a href="/blog/${post.slug}">${post.title}</a></h3>
               <p class="blog-card-excerpt">${post.excerpt}</p>
-              <a href="blog/${post.slug}.html" class="btn btn-outline btn-sm">Read Article &rarr;</a>
+              <a href="/blog/${post.slug}" class="btn btn-outline btn-sm">Read Article &rarr;</a>
             </div>
           </article>`;
 }
@@ -396,6 +416,54 @@ function updateBlogIndex(cardHtml) {
 
   html = html.replace(gridOpenTag, `${gridOpenTag}${cardHtml}`);
   writeFileSync(blogPath, html, 'utf8');
+}
+
+// Prepend a new entry to blog/posts.json so the metadata index stays in sync
+function updatePostsJson(post, date, grad) {
+  const postsPath = join(rootDir, 'blog', 'posts.json');
+  let posts = [];
+  if (existsSync(postsPath)) {
+    try { posts = JSON.parse(readFileSync(postsPath, 'utf8')); } catch (e) { posts = []; }
+  }
+  const entry = {
+    id: post.slug,
+    title: post.title,
+    slug: post.slug,
+    date: date.iso,
+    date_display: date.display,
+    excerpt: post.excerpt,
+    category: post.tag,
+    read_time: `${post.readTime} min read`,
+    gradient: grad,
+    icon: post.emoji,
+    file: `blog/${post.slug}`
+  };
+  posts.unshift(entry); // newest first
+  writeFileSync(postsPath, JSON.stringify(posts, null, 2) + '\n', 'utf8');
+}
+
+// Insert a new <url> entry into sitemap.xml so Google can find the post
+function updateSitemap(post, date) {
+  const sitemapPath = join(rootDir, 'sitemap.xml');
+  if (!existsSync(sitemapPath)) {
+    console.warn('sitemap.xml not found — skipping sitemap update');
+    return;
+  }
+  let xml = readFileSync(sitemapPath, 'utf8');
+  const loc = `https://breakwaterautodetailing.com/blog/${post.slug}`;
+  if (xml.includes(`<loc>${loc}</loc>`)) {
+    return; // already present, idempotent
+  }
+  const newEntry = `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${date.iso}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n`;
+  // Insert just before the first blog post entry, or before </urlset> as fallback
+  const blogAnchor = xml.indexOf('<loc>https://breakwaterautodetailing.com/blog/');
+  if (blogAnchor !== -1) {
+    const urlStart = xml.lastIndexOf('<url>', blogAnchor);
+    xml = xml.slice(0, urlStart) + newEntry + xml.slice(urlStart);
+  } else {
+    xml = xml.replace('</urlset>', newEntry + '</urlset>');
+  }
+  writeFileSync(sitemapPath, xml, 'utf8');
 }
 
 // Main
@@ -444,6 +512,14 @@ async function main() {
   // Prepend card to blog.html
   updateBlogIndex(buildBlogCard(post, date, gradClass));
   console.log('Updated: blog.html');
+
+  // Add metadata entry to blog/posts.json
+  updatePostsJson(post, date, gradClass);
+  console.log('Updated: blog/posts.json');
+
+  // Add URL to sitemap.xml so Google can discover the new post
+  updateSitemap(post, date);
+  console.log('Updated: sitemap.xml');
 
   console.log('Done!');
 }

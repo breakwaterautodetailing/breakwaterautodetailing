@@ -43,6 +43,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 BLOG_DIR = REPO_ROOT / "blog"
 POSTS_JSON = BLOG_DIR / "posts.json"
 BLOG_INDEX = REPO_ROOT / "blog.html"
+SITEMAP = REPO_ROOT / "sitemap.xml"
 
 GRADIENT_CYCLE = ["grad-1", "grad-2", "grad-3", "grad-4", "grad-5"]
 
@@ -162,20 +163,35 @@ POST_HTML_TEMPLATE = """\
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{title} | Breakwater Auto Detailing</title>
+  <title>{title} | Breakwater</title>
   <meta name="description" content="{excerpt}">
-  <link rel="canonical" href="https://breakwaterautodetailing.com/blog/{slug}.html">
+  <link rel="canonical" href="https://breakwaterautodetailing.com/blog/{slug}">
 
   <!-- Open Graph -->
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{excerpt}">
-  <meta property="og:image" content="../logo/breakwater-og-image.jpg">
-  <meta property="og:url" content="https://breakwaterautodetailing.com/blog/{slug}.html">
+  <meta property="og:image" content="https://breakwaterautodetailing.com/logo/breakwater-og-image.jpg">
+  <meta property="og:url" content="https://breakwaterautodetailing.com/blog/{slug}">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Breakwater Auto Detailing">
   <meta property="article:published_time" content="{date_iso}">
   <meta property="article:author" content="Breakwater Auto Detailing">
   <meta property="article:section" content="{category}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="{excerpt}">
+  <meta name="twitter:image" content="https://breakwaterautodetailing.com/logo/breakwater-og-image.jpg">
+
+  <!-- SEO & Mobile -->
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0a1628">
+  <!-- Geo signals -->
+  <meta name="geo.region" content="US-FL">
+  <meta name="geo.placename" content="Fort Lauderdale">
+  <meta name="geo.position" content="26.1224;-80.1373">
+  <meta name="ICBM" content="26.1224, -80.1373">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="../logo/favicon.ico">
@@ -191,14 +207,15 @@ POST_HTML_TEMPLATE = """\
   <!-- Stylesheet -->
   <link rel="stylesheet" href="../css/styles.css">
 
-  <!-- Schema: Article -->
+  <!-- Schema: BlogPosting -->
   <script type="application/ld+json">
   {{
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     "headline": "{title}",
     "description": "{excerpt}",
     "datePublished": "{date_iso}",
+    "dateModified": "{date_iso}",
     "author": {{
       "@type": "Organization",
       "name": "Breakwater Auto Detailing",
@@ -214,8 +231,21 @@ POST_HTML_TEMPLATE = """\
     }},
     "mainEntityOfPage": {{
       "@type": "WebPage",
-      "@id": "https://breakwaterautodetailing.com/blog/{slug}.html"
+      "@id": "https://breakwaterautodetailing.com/blog/{slug}"
     }}
+  }}
+  </script>
+
+  <!-- Schema: BreadcrumbList -->
+  <script type="application/ld+json">
+  {{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://breakwaterautodetailing.com/" }},
+      {{ "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://breakwaterautodetailing.com/blog" }},
+      {{ "@type": "ListItem", "position": 3, "name": "{title}", "item": "https://breakwaterautodetailing.com/blog/{slug}" }}
+    ]
   }}
   </script>
 </head>
@@ -224,18 +254,18 @@ POST_HTML_TEMPLATE = """\
   <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="../index.html" class="site-logo" aria-label="Breakwater Auto Detailing Home">
+      <a href="/" class="site-logo" aria-label="Breakwater Auto Detailing Home">
         <img src="../logo/breakwater-logo-header.webp" alt="Breakwater Auto Detailing logo" width="160" height="65">
       </a>
       <nav class="main-nav" id="main-nav" aria-label="Main navigation">
         <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../services.html">Services</a></li>
-          <li><a href="../gallery.html">Gallery</a></li>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../areas.html">Service Areas</a></li>
-          <li><a href="../blog.html" class="active">Blog</a></li>
-          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/areas">Service Areas</a></li>
+          <li><a href="/blog" class="active">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
         <div class="nav-cta">
           <a href="tel:9545548941" class="btn btn-primary btn-block">&#x1F4F1; Call (954) 554-8941</a>
@@ -243,9 +273,7 @@ POST_HTML_TEMPLATE = """\
       </nav>
       <a href="tel:9545548941" class="btn btn-primary btn-sm header-cta">Call Now</a>
       <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
     </div>
     <div class="nav-overlay" aria-hidden="true"></div>
@@ -268,7 +296,7 @@ POST_HTML_TEMPLATE = """\
       <div class="container">
         <div class="blog-post-wrap">
 
-          <a href="../blog.html" class="blog-back-link">&larr; Back to all articles</a>
+          <a href="/blog" class="blog-back-link">&larr; Back to all articles</a>
 
           <!-- Post Meta -->
           <div class="blog-post-meta">
@@ -288,7 +316,7 @@ POST_HTML_TEMPLATE = """\
             <p>Breakwater Auto Detailing comes to you anywhere in Broward County, Miami-Dade County, or Palm Beach County. Call or text for a free, no-pressure quote.</p>
             <div class="section-actions">
               <a href="tel:9545548941" class="btn btn-primary btn-lg">&#x1F4DE; Call (954) 554-8941</a>
-              <a href="../services.html" class="btn btn-outline btn-lg">View Services &amp; Pricing</a>
+              <a href="/services" class="btn btn-outline btn-lg">View Services &amp; Pricing</a>
             </div>
           </div>
 
@@ -310,7 +338,7 @@ POST_HTML_TEMPLATE = """\
       <div class="container" style="text-align:center;">
         <h2 style="margin-bottom:1rem;">More From the Blog</h2>
         <p style="color:var(--color-gray-500);margin-bottom:1.5rem;">New articles published every month covering South Florida car care, local news, and detailing insights.</p>
-        <a href="../blog.html" class="btn btn-primary">&larr; Back to All Articles</a>
+        <a href="/blog" class="btn btn-primary">&larr; Back to All Articles</a>
       </div>
     </section>
 
@@ -340,38 +368,36 @@ POST_HTML_TEMPLATE = """\
         <div class="footer-section">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../services.html">Services &amp; Pricing</a></li>
-            <li><a href="../gallery.html">Gallery</a></li>
-            <li><a href="../about.html">About Us</a></li>
-            <li><a href="../areas.html">Service Areas</a></li>
-            <li><a href="../blog.html">Blog</a></li>
-            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">Services &amp; Pricing</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/areas">Service Areas</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h4>Services</h4>
           <ul>
-            <li><a href="../services.html#basic-wash">Basic Wash</a></li>
-            <li><a href="../services.html#express-detail">Express Detail</a></li>
-            <li><a href="../services.html#premium-detail">Premium Detail</a></li>
-            <li><a href="../services.html#elite-detail">Elite Detail</a></li>
-            <li><a href="../services.html#add-ons">Ceramic Coating</a></li>
+            <li><a href="/services#basic-wash">Basic Wash</a></li>
+            <li><a href="/services#express-detail">Express Detail</a></li>
+            <li><a href="/services#premium-detail">Premium Detail</a></li>
+            <li><a href="/services#elite-detail">Elite Detail</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h4>Contact</h4>
-          <div class="footer-contact-item">
-            &#x1F4F1; <a href="tel:9545548941">(954) 554-8941</a>
-          </div>
-          <div class="footer-contact-item">
-            &#x1F4E7; <a href="mailto:info@breakwaterautodetailing.com">info@breakwaterautodetailing.com</a>
-          </div>
-          <div class="footer-contact-item">
-            &#x1F4CD; Serving Broward, Palm Beach &amp; Miami-Dade
-          </div>
-          <div class="footer-contact-item">
-            <a href="https://www.instagram.com/eastcoast.detail" target="_blank" rel="noopener noreferrer">&#x1F4F8; @eastcoast.detail</a>
+          <div class="footer-contact-item">&#x1F4F1; <a href="tel:9545548941">(954) 554-8941</a></div>
+          <div class="footer-contact-item">&#x1F4E7; <a href="mailto:info@breakwaterautodetailing.com">info@breakwaterautodetailing.com</a></div>
+          <div class="footer-contact-item">&#x1F4CD; Serving Broward, Palm Beach &amp; Miami-Dade</div>
+          <div class="footer-socials">
+            <a class="social-link social-link-youtube" href="https://www.youtube.com/@BreakwaterAutoDetailing" target="_blank" rel="noopener noreferrer" aria-label="Visit Breakwater Auto Detailing on YouTube" title="YouTube"><span class="social-link-icon" aria-hidden="true">&#9654;</span><span class="sr-only">YouTube</span></a>
+            <a class="social-link social-link-tiktok" href="https://www.tiktok.com/@breakwaterauto" target="_blank" rel="noopener noreferrer" aria-label="Visit Breakwater Auto Detailing on TikTok" title="TikTok"><span class="social-link-icon" aria-hidden="true">&#9835;</span><span class="sr-only">TikTok</span></a>
+            <a class="social-link social-link-x" href="https://x.com/breakwaterauto" target="_blank" rel="noopener noreferrer" aria-label="Visit Breakwater Auto Detailing on X" title="X"><span class="social-link-icon" aria-hidden="true">X</span><span class="sr-only">X</span></a>
+            <a class="social-link social-link-instagram" href="https://www.instagram.com/breakwater.detail/" target="_blank" rel="noopener noreferrer" aria-label="Visit Breakwater Auto Detailing on Instagram" title="Instagram"><span class="social-link-icon" aria-hidden="true">&#128247;</span><span class="sr-only">Instagram</span></a>
+            <a class="social-link social-link-facebook" href="https://www.facebook.com/profile.php?id=61578484807400" target="_blank" rel="noopener noreferrer" aria-label="Visit Breakwater Auto Detailing on Facebook" title="Facebook"><span class="social-link-icon" aria-hidden="true">f</span><span class="sr-only">Facebook</span></a>
+            <a class="social-link social-link-pinterest" href="https://www.pinterest.com/breakwaterauto/" target="_blank" rel="noopener noreferrer" aria-label="Visit Breakwater Auto Detailing on Pinterest" title="Pinterest"><span class="social-link-icon" aria-hidden="true">&#128204;</span><span class="sr-only">Pinterest</span></a>
           </div>
         </div>
       </div>
@@ -427,9 +453,9 @@ CARD_TEMPLATE = """\
                 <span class="blog-date">{date_display}</span>
                 <span class="blog-read-time">&#x23F1; {read_time}</span>
               </div>
-              <h3><a href="blog/{slug}.html">{title}</a></h3>
+              <h3><a href="/blog/{slug}">{title}</a></h3>
               <p class="blog-card-excerpt">{excerpt}</p>
-              <a href="blog/{slug}.html" class="btn btn-outline btn-sm">Read Article &rarr;</a>
+              <a href="/blog/{slug}" class="btn btn-outline btn-sm">Read Article &rarr;</a>
             </div>
           </article>"""
 
@@ -444,6 +470,36 @@ def render_card(post: dict) -> str:
 
 BLOG_START = "    <!-- BLOG_POSTS_START -->"
 BLOG_END = "    <!-- BLOG_POSTS_END -->"
+
+
+def update_sitemap(slug: str, date_iso: str) -> None:
+    """Insert a new <url> entry into sitemap.xml for the freshly published post."""
+    if not SITEMAP.exists():
+        print(f"[WARN] {SITEMAP} not found — skipping sitemap update.")
+        return
+    xml = SITEMAP.read_text(encoding="utf-8")
+    loc = f"https://breakwaterautodetailing.com/blog/{slug}"
+    if f"<loc>{loc}</loc>" in xml:
+        return  # idempotent — already in sitemap
+    entry = (
+        "  <url>\n"
+        f"    <loc>{loc}</loc>\n"
+        f"    <lastmod>{date_iso}</lastmod>\n"
+        "    <changefreq>monthly</changefreq>\n"
+        "    <priority>0.6</priority>\n"
+        "  </url>\n"
+    )
+    # Insert before the first existing /blog/ entry so newest stays at top of blog section
+    blog_anchor = xml.find("<loc>https://breakwaterautodetailing.com/blog/")
+    if blog_anchor != -1:
+        url_start = xml.rfind("<url>", 0, blog_anchor)
+        # Trim the indentation that precedes <url> so spacing matches existing entries
+        line_start = xml.rfind("\n", 0, url_start) + 1
+        xml = xml[:line_start] + entry + xml[line_start:]
+    else:
+        xml = xml.replace("</urlset>", entry + "</urlset>")
+    SITEMAP.write_text(xml, encoding="utf-8")
+    print(f"[OK] Added {loc} to sitemap.xml")
 
 
 def regenerate_blog_index(posts: list) -> None:
@@ -518,7 +574,7 @@ def main() -> None:
     post["slug"] = slug
     post["date"] = date_iso
     post["date_display"] = date_display
-    post["file"] = f"blog/{slug}.html"
+    post["file"] = f"blog/{slug}"
 
     # Pick gradient from cycle based on post count
     posts = json.loads(POSTS_JSON.read_text(encoding="utf-8")) if POSTS_JSON.exists() else []
@@ -543,6 +599,9 @@ def main() -> None:
 
     # 5. Regenerate blog.html listing
     regenerate_blog_index(posts)
+
+    # 6. Add new post URL to sitemap.xml
+    update_sitemap(slug, date_iso)
 
     print(f"\n[DONE] Blog post published: {post_path.name}")
     print(f"       Title: {post['title']}")
