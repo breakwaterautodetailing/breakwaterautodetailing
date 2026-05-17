@@ -455,11 +455,14 @@ function updateSitemap(post, date) {
     return; // already present, idempotent
   }
   const newEntry = `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${date.iso}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n`;
-  // Insert just before the first blog post entry, or before </urlset> as fallback
+  // Insert just before the first blog post entry, or before </urlset> as fallback.
+  // Anchor on the START OF THE LINE containing <url> so the existing line's
+  // leading indent doesn't collide with the new entry's indent.
   const blogAnchor = xml.indexOf('<loc>https://breakwaterautodetailing.com/blog/');
   if (blogAnchor !== -1) {
     const urlStart = xml.lastIndexOf('<url>', blogAnchor);
-    xml = xml.slice(0, urlStart) + newEntry + xml.slice(urlStart);
+    const lineStart = xml.lastIndexOf('\n', urlStart) + 1;
+    xml = xml.slice(0, lineStart) + newEntry + xml.slice(lineStart);
   } else {
     xml = xml.replace('</urlset>', newEntry + '</urlset>');
   }
