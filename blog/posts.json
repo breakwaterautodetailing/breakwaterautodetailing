@@ -140,5 +140,17 @@
     "date": "2026-05-17",
     "date_display": "May 17, 2026",
     "file": "blog/2026-05-protect-your-car-during-south-florida-rainy-season"
+  },
+  {
+    "title": "Prepare Your Car for South Florida's June Heat & Events",
+    "slug": "2026-06-prepare-your-car-june-heat-events",
+    "excerpt": "Explore essential car care tips for June in South Florida. Protect your vehicle's paint and value during the summer heat.",
+    "category": "Seasonal Guide",
+    "read_time": "6 min read",
+    "icon": "☀️",
+    "gradient": "grad-2",
+    "date": "2026-06-01",
+    "date_display": "June 1, 2026",
+    "file": "blog/2026-06-prepare-your-car-june-heat-events"
   }
 ]
