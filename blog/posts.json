@@ -178,5 +178,17 @@
     "date": "2026-06-01",
     "date_display": "June 1, 2026",
     "file": "blog/2026-06-prepare-your-car-june-heat-events"
+  },
+  {
+    "title": "Protect Your Car from Summer Heat in South Florida",
+    "slug": "2026-07-protect-your-car-summer-heat",
+    "excerpt": "Learn essential tips to shield your vehicle from South Florida's intense summer heat and maintain its value with mobile detailing services.",
+    "category": "Seasonal Guide",
+    "read_time": "8 min read",
+    "icon": "☀️",
+    "gradient": "grad-5",
+    "date": "2026-07-01",
+    "date_display": "July 1, 2026",
+    "file": "blog/2026-07-protect-your-car-summer-heat"
   }
 ]
