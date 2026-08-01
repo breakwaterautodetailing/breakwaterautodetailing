@@ -216,5 +216,17 @@
     "date": "2026-07-01",
     "date_display": "July 1, 2026",
     "file": "blog/2026-07-protect-your-car-summer-heat"
+  },
+  {
+    "title": "August Car Care: Beat the Heat and Stay Protected",
+    "slug": "2026-08-august-car-care-beat-the-heat",
+    "excerpt": "Discover essential car care tips for August in South Florida, including UV protection and how to deal with environmental contaminants.",
+    "category": "Seasonal Guide",
+    "read_time": "6 min read",
+    "icon": "☀️",
+    "gradient": "grad-3",
+    "date": "2026-08-01",
+    "date_display": "August 1, 2026",
+    "file": "blog/2026-08-august-car-care-beat-the-heat"
   }
 ]
