@@ -331,5 +331,17 @@
     "date": "2026-09-01",
     "date_display": "September 1, 2026",
     "file": "blog/2026-09-protect-your-car-this-fall"
+  },
+  {
+    "title": "Protect Your Car's Shine This Fall in South Florida",
+    "slug": "2026-11-protect-your-car-shine-fall-south-florida",
+    "excerpt": "As Miami Heat fans celebrate back-to-back wins, car owners can also score by protecting their vehicle's paint from South Florida's harsh sun and environmental contaminants.",
+    "category": "Car Care Tips",
+    "read_time": "7 min read",
+    "icon": "🚗",
+    "gradient": "grad-2",
+    "date": "2026-11-01",
+    "date_display": "November 1, 2026",
+    "file": "blog/2026-11-protect-your-car-shine-fall-south-florida"
   }
 ]
